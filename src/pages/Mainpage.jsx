@@ -10,7 +10,6 @@ function MainPage() {
 
   const navigate = useNavigate();
   const [isLoggedIn, setAccountStatus] = useState(false);
-  const [prompt, setPrompt] = useState("")
   useEffect(() => {setAccountStatus(localStorage.getItem("authorization") == null ? false : true)}, [])
 
   return (
@@ -24,9 +23,8 @@ function MainPage() {
           Blanditiis possimus aliquid minima eum maxime assumenda exercitationem, dolor laborum. Error accusamus culpa, pariatur autem commodi voluptatibus quia.</p>
         </article>
         <div className="gap-2 mt-10 flex flex-row items-center justify-center">
-          <textarea className="w-80" onChange={(e) => (setPrompt(e.target.value))}></textarea>
           <Outlinedbutton text="Pradėti pokalbį" color={"blue-500"} onClick={
-           () => {isLoggedIn == true ? handler.newChat(prompt) : navigate("/login")}
+           () => {isLoggedIn == true ? navigate("/new") : navigate("/login")}
           } custom={"text-xl lg:text-2xl"}/>
         </div>
       </main>

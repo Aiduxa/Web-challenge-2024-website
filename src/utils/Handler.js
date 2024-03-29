@@ -51,7 +51,7 @@ function getChats() {
             "Authorization": `Bearer ${token}`
         }}
     ).then(result => {
-        return result.data
+        console.log(result.data);
     })
     .catch((e) => {alert(e)})
 }
@@ -101,5 +101,6 @@ export default {
     loginToAPI: loginToAPI,
     getChats: getChats,
     deleteChat: deleteChat,
-    replyToChat: replyToChat
+    replyToChat: replyToChat,
+    _api_end_point: _api_end_point
 }

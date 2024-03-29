@@ -19,16 +19,7 @@ function Footer() {
                 <h2 className="text-gray-400 text-lg">KTMC Student</h2>
             </div>
             <div>
-                {pages.map((page) => {
-                    <>
-                        <h2>{page.text}</h2>
-                        <ul>
-                            {page.pages.map((subpage) => {
-                                <li><a href={subpage.url}>{subpage.text}</a></li>
-                            })}
-                        </ul>
-                    </>
-                })}
+                <p className="text-gray-400 text-lg">Padaryta 2024-03-29 15:30</p>
             </div>
         </footer>
     )

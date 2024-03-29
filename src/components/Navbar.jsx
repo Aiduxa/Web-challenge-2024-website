@@ -11,7 +11,7 @@ function Navbar( { isLoggedIn } ) {
         <a href="/chats" className="text-gray-300 font-semibold">Pokalbiai</a>
         <a href="/new" className="text-gray-300 font-semibold">Naujas</a>
       </div>
-      {isLoggedIn == true ? <button className='text-white text-5xl m-2'><HiOutlineLogout /></button> : <button className='text-white text-5xl m-2'><HiOutlineUser /></button> }
+      {isLoggedIn == true ? <button className='text-white text-5xl m-2' onClick={() => {localStorage.removeItem("authorization"); location.reload()}}><HiOutlineLogout /></button> : <button className='text-white text-5xl m-2' onClick={() => {window.location.replace("/login")}}><HiOutlineUser /></button> }
     </header>
   )
 }
